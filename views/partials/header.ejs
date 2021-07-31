@@ -1,0 +1,91 @@
+<header class="container-fluid">
+    <a href="/"><img src="/images/logo.png" alt="" /></a>
+    <nav>
+        <ul class="menu">
+            <li><a href="">smartphones</a></li>
+            <li><a href="">tablets</a></li>
+            <li><a href="">computadoras</a></li>
+        </ul>
+        <ul class="user">
+            <li><a href="/products/add">agregar</a></li>   <!-- le creo otra opción en la lista del home para poder agregar -->
+            <li><a href="/users/login">login</a></li>  <!-- PARA QUE COINCIDA CON LA RUTA DE APP, AGREGO (BARRA) /USERS A LOGIN Y REGISTER -->
+            <li><a href="/users/register">registro</a></li>
+        </ul>
+    </nav>
+</header> 
+
+
+<header class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+                  smartphones
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <% productos.forEach(producto => { %>   
+                        <li><a class="dropdown-item" href="#"><%= producto.title %> </a></li>   <!-- en el navbar dropdown me muestra el nombre de todos los productos (celulares) -->
+                    <% }) %>
+                 
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+                  tablets
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+                  computadoras
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form action="/products/search" class="d-flex">
+             
+              <input name="search" class="orm-control me-2" type="search" placeholder="Search" aria-label="Search">
+              
+              <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+                  admin
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/products/add">Agregar producto</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/login">login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/register">registro</a>
+                  </li>
+                
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

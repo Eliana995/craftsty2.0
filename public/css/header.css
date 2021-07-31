@@ -1,0 +1,32 @@
+header{
+    background-color: #DF5837;
+    display: flex;
+    padding: 10px;  /* Un padding al contenedor padre */
+    
+}
+
+header nav{
+    width: 100%; /* Para que pueda partir la lista -- 100% que le queda restando la imagen */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+}
+
+/* header ul .menu */
+    /* justify-content: space-between; */ /* con space between, varía el tamaño con la pantalla (relativo) */
+
+header ul li{
+    margin-right: 10px; /* directamente, se ataca al hijo */
+}
+
+
+header ul li a{
+    color: white;
+    text-transform: uppercase;
+}
+

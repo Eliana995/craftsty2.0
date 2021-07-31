@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+    <body class="home">
+        <%- include('./partials/header') %>
+            <main class="container">
+                <div class="row">
+                    <!-- IMAGENES DE PRODUCTOS -->
+                    <section class="productos col-12 col-md-8 col-lg-9">
+                        <h3>Celulares</h3>
+
+                        <div class="celulares row py-4 gx-3">
+                            <!-- ACÁ SOLO QUIERO ITERAR EL ARTICLE (porque su estructura se repite) || NO EL SECTION NI EL DIV ||| Borro todos los articles excepto el primero || Solo acá va a quedar lo que yo quiero iterar-->
+                            <h4>NUEVOS</h4>
+                            <% nuevos.forEach(producto=> { %>
+                                <!-- cambio el nombre de array por productos || ya me cercioré que productos es un array /// Lo que voy a foreachear: cada elemento es un PRODUCTO-->
+
+                                <div class="col-12 col-md-6 col-lg-4 my-2">
+                                    <!-- clase responsable de repartir la plantilla de bootstrap || dentro de esta caja se coloca el article-->
+                                    <article class="p-3">
+                                        <img src="/images/<%= producto.image %> " alt="" />
+                                        <!-- SIEMPRE DENTRO DE LAS COMILLAS -->
+                                        <h4>
+                                            <%= producto.title %>
+                                        </h4>
+                                        <!-- PARA QUE LAS ETIQUETAS TENGAN VALOR, DEBE IR CON EL SIGNO IGUAL -->
+                                        <p>
+                                            <%= producto.description %>
+                                        </p>
+                                        <a href="/products/detail/<%= producto.id %> ">ver más</a>
+                                        <!-- PONER SIEMPRE LA BARRA ANTES -->
+                                    </article>
+                                </div>
+                                <% }) %>
+
+                                <h4>REFACCIONADO</h4>
+                                <% refact.forEach(producto=> { %>
+                                    <!-- cambio el nombre de array por productos || ya me cercioré que productos es un array /// Lo que voy a foreachear: cada elemento es un PRODUCTO-->
+    
+                                    <div class="col-12 col-md-6 col-lg-4 my-2">
+                                        <!-- clase responsable de repartir la plantilla de bootstrap || dentro de esta caja se coloca el article-->
+                                        <article class="p-3">
+                                            <img src="/images/<%= producto.image %> " alt="" />
+                                            <!-- SIEMPRE DENTRO DE LAS COMILLAS -->
+                                            <h4>
+                                                <%= producto.title %>
+                                            </h4>
+                                            <!-- PARA QUE LAS ETIQUETAS TENGAN VALOR, DEBE IR CON EL SIGNO IGUAL -->
+                                            <p>
+                                                <%= producto.description %>
+                                            </p>
+                                            <a href="/products/detail/<%= producto.id %> ">ver más</a>
+                                            <!-- PONER SIEMPRE LA BARRA ANTES -->
+                                        </article>
+                                    </div>
+                                    <% }) %>
+
+                                    <h4>USADOS</h4>
+                                    <% usado.forEach(producto=> { %>
+                                        <!-- cambio el nombre de array por productos || ya me cercioré que productos es un array /// Lo que voy a foreachear: cada elemento es un PRODUCTO-->
+        
+                                        <div class="col-12 col-md-6 col-lg-4 my-2">
+                                            <!-- clase responsable de repartir la plantilla de bootstrap || dentro de esta caja se coloca el article-->
+                                            <article class="p-3">
+                                                <img src="/images/<%= producto.image %> " alt="" />
+                                                <!-- SIEMPRE DENTRO DE LAS COMILLAS -->
+                                                <h4>
+                                                    <%= producto.title %>
+                                                </h4>
+                                                <!-- PARA QUE LAS ETIQUETAS TENGAN VALOR, DEBE IR CON EL SIGNO IGUAL -->
+                                                <p>
+                                                    <%= producto.description %>
+                                                </p>
+                                                <a href="/products/detail/<%= producto.id %> ">ver más</a>
+                                                <!-- PONER SIEMPRE LA BARRA ANTES -->
+                                            </article>
+                                        </div>
+                                        <% }) %>
+
+
+                        </div>
+                    </section>
+
+                    <!-- ASIDE // TUTORIALES -->
+                    <aside class="col-12 col-md-4 col-lg-3">
+                        <section class="tutoriales">
+                            <h3>Tutoriales</h3>
+                            <% tutoriales.forEach(tutorial=> { %>
+                                <article>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <img src="/images/<%= tutorial.image %> " alt="" />
+                                        </div>
+                                        <div class="col-7">
+                                            <p>
+                                                <%= tutorial.name %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% }) %>
+                        </section>
+
+                        <!-- PUBLICIDAD -->
+                        <section class="publicidad">
+                            <h3>Publicidad</h3>
+                            <article>
+                                <img src="/images/ad-01.jpg" alt="" />
+                                <img src="/images/ad-02.jpg" alt="" />
+                            </article>
+                        </section>
+                    </aside>
+                </div>
+            </main>
+
+            <%- include('./partials/script') %>
+    </body>
+
+</html>

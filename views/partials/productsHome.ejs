@@ -1,0 +1,16 @@
+<div class="col-12 col-md-6 col-lg-4 my-2">
+    <!-- clase responsable de repartir la plantilla de bootstrap || dentro de esta caja se coloca el article-->
+    <article class="p-3">
+        <img src="/images/<%= producto.image %> " alt="" />
+        <!-- SIEMPRE DENTRO DE LAS COMILLAS -->
+        <h4>
+            <%= producto.title %>
+        </h4>
+        <!-- PARA QUE LAS ETIQUETAS TENGAN VALOR, DEBE IR CON EL SIGNO IGUAL -->
+        <p>
+            <%= producto.description %>
+        </p>
+        <a href="/products/detail/<%= producto.id %> ">ver más</a>
+        <!-- PONER SIEMPRE LA BARRA ANTES -->
+    </article>
+</div>
