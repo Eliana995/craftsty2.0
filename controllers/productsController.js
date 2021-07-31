@@ -18,5 +18,16 @@ module.exports = {
             producto,
             productos    /* mando este producto a la vista - renderizado | trabajo sobre index */
         })
+    },
+    search : (req,res) => {   /* creo este nuevo método */
+
+        let result = productos.filter(producto => producto.category === req.query)
+        /* return res.send(result)  */
+        /* return res.send(req.query)  */ /* voy a mandar a la vista lo que la vista me viene como petición en el objeto query || En el nav bar, si pongo "nuevo", debería mostrar el objeto literal/query (search : "nuevo") - search es el nombre del input en index || en query/search ya tengo la info que necesito para buscar algo */
+        return res.render('resultSearch',{
+            result,
+            productos,
+            busqueda : req.query.search
+        })  /* creo esta nueva vista */
     }
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head') %> 
+    
+<body>
+
+  <%- include('./partials/header') %> 
+    <div class="register">
+        <main class="container mt-5">
+            <% if (result.length > 0) { %>  <!-- si result.length es distinto o mayor a 0 (o sea, hay producto) mostrame TODO ESTO -->
+                <h3>Resultados de la búsqueda: <%= busqueda %> </h3> <!-- en la vista deberia aparecer: "resultado de la busqueda: nuevo"(ejemplo) -->
+                <table class="table">
+                    <thead>
+                      <tr> <!-- encabezado -->
+                        <th scope="col">#</th> <!-- id -->
+                        <th scope="col">Nombre del producto</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                      </tr>
+                    </thead>
+                    <tbody>  <!-- lo que quiero foreachear -->
+                        <% result.forEach(producto => { %>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><%= producto.title %> </td> <!-- que me muestre la etiqueta producto punto title | lo mismo con el resto -->
+                                <td><%= producto.description %> </td>
+                                <td><%= producto.price %> </td>
+                              </tr>
+                        <% }) %>
+                      
+                     
+                    </tbody>
+                  </table>
+            <% } else{ %>
+                <h3>No hay resultado para la búsqueda: <%= busqueda %> </h3>
+                <% } %>
+
+        </main>
+    </div>
+    <%- include('./partials/script') %> 
+
+</body>
+</html>
